@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter, Baumans, Frijole, Martian_Mono } from 'next/font/google';
+import { Inter, Baumans, Frijole, Underdog, Cabin } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import Providers from '@/providers';
 // const inter = Inter({ subsets: ['latin'] });
-// const underDog = Underdog({ subsets: ['latin'], weight: '400' });
-const frijole = Martian_Mono({ weight: ['400'], subsets: ['latin'] });
+const underDog = Cabin({ subsets: ['latin'], weight: '400' });
+// const frijole = Martian_Mono({ weight: ['400'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'JobNet',
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={frijole.className}>
+        <body className={underDog.className}>
           <Providers>{children}</Providers>
         </body>
       </html>
