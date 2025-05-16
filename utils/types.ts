@@ -12,15 +12,6 @@ export type JobType = {
   mode: string;
 };
 
-export type JobSeed = {
-  createdAt: Date;
-  position: string;
-  company: string;
-  location: string;
-  status: string;
-  mode: string;
-};
-
 export enum JobStatus {
   Pending = 'pending',
   Interview = 'interview',

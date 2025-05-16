@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   const clerkId = 'user_2x5GQiGQjknSFWH4fEtcBy6n0r9';
-  const jobs = data.map((job) => {
+  const jobs = data.map((job: any) => {
     return {
       ...job,
       clerkId,
