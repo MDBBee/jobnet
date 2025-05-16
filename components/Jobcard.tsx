@@ -30,9 +30,17 @@ function JobCard({ job }: { job: JobType }) {
         <JobInfo icon={<Briefcase />} text={job.mode} />
         <JobInfo icon={<MapPin />} text={job.location} />
         <JobInfo icon={<CalendarDays />} text={date} />
-        <Badge className="w-32  justify-center">
+        <Badge
+          className={`w-32  justify-center ${
+            job.status === 'interview'
+              ? 'bg-slate-600'
+              : job.status === 'declined'
+              ? 'bg-destructive'
+              : ''
+          }`}
+        >
           <JobInfo
-            icon={<RadioTower className="w-4 h-4" />}
+            icon={<RadioTower className={`w-4 h-4 `} />}
             text={job.status}
           />
         </Badge>

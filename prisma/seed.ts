@@ -1,19 +1,10 @@
 const { PrismaClient } = require('@prisma/client');
-const data = require('./mock-data.json');
+const data = require('./seed-data.json');
 const prisma = new PrismaClient();
-
-type JobSeed = {
-  createdAt: Date;
-  position: string;
-  company: string;
-  location: string;
-  status: string;
-  mode: string;
-};
 
 async function main() {
   const clerkId = 'user_2x5GQiGQjknSFWH4fEtcBy6n0r9';
-  const jobs = data.map((job: JobSeed) => {
+  const jobs = data.map((job) => {
     return {
       ...job,
       clerkId,
