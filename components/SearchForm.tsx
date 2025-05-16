@@ -25,11 +25,11 @@ function SearchContainer() {
 
   const router = useRouter();
   const pathname = usePathname();
-
+  let form: HTMLFormElement;
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let params = new URLSearchParams();
-
+    form = e.currentTarget;
     const formData = new FormData(e.currentTarget);
     const search = formData.get('search') as string;
     const jobStatus = formData.get('jobStatus') as string;

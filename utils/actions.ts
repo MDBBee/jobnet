@@ -125,6 +125,7 @@ export async function deleteJobAction(id: string): Promise<JobType | null> {
 export async function getSingleJobAction(id: string): Promise<JobType | null> {
   let job: JobType | null = null;
   const userId = authenticateAndRedirect();
+  console.log('🔥🔥🔥🔥', userId);
 
   try {
     job = await prisma.job.findUnique({
